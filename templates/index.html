@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+    
+</head>
+<body>
+
+    <header>
+        <h1>Laptop Price Prediction</h1>
+    </header>
+
+    <section>
+        <h2>Laptop Details</h2>
+        <div>
+            <form action="{{ url_for('predict')}}" method="post">
+                <label for="companyName">Company Name:</label>
+                <select name="companyname" id="companyName">
+                    <option value="Acer">Acer</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Dell">Dell</option>
+                    <option value="HP">HP</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="MSI">MSI</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Chuwi">Chuwi</option>
+                    <option value="Toshiba">Toshiba</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Vero">Vero</option>
+                    <option value="Google">Google</option>
+                    <option value="Mediacom">Mediacom</option>
+                    <option value="Fujitsu">Fujitsu</option>
+                    <option value="LG">LG</option>
+                </select>
+                
+    
+                <label for="typeName">Type Name:</label>
+                <select name="typename" id="typeName">
+                    <option value="Ultrabook">Ultrabook</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                    <option value="Netbook">Netbook</option>
+                    <option value="Workstation">Workstation</option>
+
+                </select>
+    
+                <label for="ram">RAM (GB):</label>
+                <input type="number" id="ram" name="ram" required>
+    
+                <label for="weight">Weight (kg):</label>
+                <input type="number" step="0.01" id="weight" name="weight" required>
+    
+                <label for="cpuBrand">CPU Brand:</label>
+                <select name="cpuBrand" id="cpuBrand">
+                    <option value="Intel Core i5">Intel Core i5</option>
+                    <option value="Intel Core i7">Intel Core i7</option>
+                    <option value="Intel Core i3">Intel Core i3</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Other">Other Intel Processor</option>
+                </select>
+    
+                <label for="gpuBrand">GPU Brand:</label>
+                <select name="gpuBrand" id="gpuBrand">
+                    <option value="Intel">Intel</option>
+                    <option value="Nvidia">Nvidia</option>
+                    <option value="AMD">AMD</option>
+                    <option value="Other">Other</option>
+                </select>
+    
+                <label for="opsys">Operating System:</label>
+                <select name="opsys" id="opsys">
+                    <option value="Windows">Windows</option>
+                    <option value="Mac">Mac</option>
+                    <option value="Linux">Linux</option>
+                    <option value="Others">Others</option>
+                </select>
+    
+                <label for="inch">Screen Size (Inch):</label>
+                <input type="number" step="0.1" id="inch" name="inch" required>
+    
+                <label for="xResolution">X Resolution:</label>
+                <input type="number" id="xResolution" name="xResolution" required>
+    
+                <label for="yResolution">Y Resolution:</label>
+                <input type="number" id="yResolution" name="yResolution" required>
+    
+                <label for="hddSize">HDD Size (GB):</label>
+                <input type="number" id="hddSize" name="hddSize" required>
+    
+                <label for="ssdsize">SSD Size (GB):</label>
+                <input type="number" id="size" name="ssdsize" required>
+    
+                <label for="touchscreen">Touchscreen (Yes/No):</label>
+                <select name="touchscreen" id="touchscreen">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+    
+                <label for="ips">IPS Display (Yes/No):</label>
+                <select name="ips" id="ips">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+    
+                <label for="hd">HD Display (Yes/No):</label>
+                <select name="hd" id="hd">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+    
+                <button type="submit">Predict Price</button>
+            </form>
+        </div>
+        <div>
+            <h2>Price Prediction</h2>
+            <p>Price: {{ prediction }}</p>
+        </div>
+    </section>
+
+</body>
+</html>

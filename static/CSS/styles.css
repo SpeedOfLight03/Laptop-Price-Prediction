@@ -1,0 +1,60 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #495057;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    overflow: visible; /* Ensure the button text is visible */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    font-size: 20px;
+    font-family: sans-serif;
+}
